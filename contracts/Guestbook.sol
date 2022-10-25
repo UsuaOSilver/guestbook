@@ -16,7 +16,7 @@ contract Guestbook {
     }
     
     mapping(uint256 => guestInfo) guests;
-    uint256 public guesttCount = 0;
+    uint256 public guestCount = 0;
     
     event AddedGuest(string message, guestInfo guest);
     
@@ -27,7 +27,7 @@ contract Guestbook {
         newGuest.message = message;
         newGuest.date = date;
         guestCount++;
-        emit AddedGuest("Added guest", guest[id]);
+        emit AddedGuest("Added guest", guests[id]);
     }
     
     function getGuestById(uint256 id) public view returns (guestInfo memory) {
